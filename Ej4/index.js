@@ -11,13 +11,14 @@ http.createServer((req, res) => {
         res.writeHead(200, { "Content-Type": "text/html" });
         res.write(data);
         return res.end();
-      } catch (error) {
-        fs.readFile("./pages/inicio.html", (err, data) => {
+    } catch (error) {
+        fs.readFile("./pages/notFound.html", (err, data) => {
         res.writeHead(404, { "Content-Type": "text/html" });
         console.error(error);
         return res.end(data);
       })}
     });
+
   }).listen(8080);
 
 
